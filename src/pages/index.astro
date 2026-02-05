@@ -1,11 +1,175 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const siteName = "WI課 関谷";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteName}</title>
+    <meta name="description" content="Web制作・デザイン・システム開発を行うANDLINE株式会社の公式サイト" />
+    <style>
+      :root {
+        --main: #0f172a;
+        --accent: #2563eb;
+        --bg: #f8fafc;
+        --text: #1e293b;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.7;
+      }
+
+      header {
+        background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      header p {
+        font-size: 18px;
+        opacity: 0.9;
+      }
+
+      section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 20px;
+      }
+
+      h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      }
+
+      .card h3 {
+        margin-bottom: 12px;
+        color: var(--accent);
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .about img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .cta {
+        background: var(--accent);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .cta a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 14px 36px;
+        background: white;
+        color: var(--accent);
+        border-radius: 999px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      footer {
+        background: var(--main);
+        color: white;
+        text-align: center;
+        padding: 30px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 34px;
+        }
+
+        .about {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>{siteName}</h1>
+      <p>株式会社アイキューブ・マーケティング/システム部/Webinnovation課</p>
+    </header>
+
+    <section>
+      <h2>業務内容</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Web制作</h3>
+          <p>自社サイトの制作から運営まで行っております。</p>
+        </div>
+        <div class="card">
+          <h3>UI / UX デザイン</h3>
+          <p>WPデザイン、バナーなどすべてのデザインを行っております。</p>
+        </div>
+        <div class="card">
+          <h3>システム開発</h3>
+          <p>業務効率化・管理画面・API開発まで行っております。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>WI課について</h2>
+      <div class="about">
+        <div>
+          <p>
+            私たちは、自社サイトの制作から運営まで行い、営業部からの依頼を元にフォームの制作やお知らせの投稿なども行います。
+          </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="office" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>お問い合わせ</h2>
+      <p>Web制作・開発のご相談はお気軽にお問い合わせください。</p>
+      <a href="#">お問い合わせはこちら</a>
+    </section>
+
+    <footer>
+      © 2026 ANDLINE Inc. All Rights Reserved.
+    </footer>
+  </body>
+</html>
